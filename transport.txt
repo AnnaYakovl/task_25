@@ -1,0 +1,128 @@
+<?php
+
+//с помощью абстрактного класса
+abstract class Transport
+{    
+    protected function act()
+    {
+	this->go(); //машина едет
+	this->doSmth(); //вызывает одну из способностей машины
+    }
+
+    protected function go()
+    {
+
+    }
+
+    protected function honk()
+    {
+	echo $this->honk; //машина сигналит
+    }
+
+    protected function turn_on_the_wipers() 
+    {
+        // дворники
+    }   
+}
+
+class Passenger_car extends Transport
+{
+    protected $honk = "bi-bi";
+    private $volume_of_the_tank;
+    private $engine_power;
+
+    protected function doSmth()
+    {
+	this->Nitrous_oxide() //закись азота
+    }
+
+    protected function Nitrous_oxide()
+    {
+
+    }
+}
+
+class Bulldozer
+{
+    protected $honk = "buuuuu";
+    private $volume_of_the_tank;
+    private $engine_power;
+
+    protected function doSmth()
+    {
+	this->Swing_the_bucket() //движения ковшом
+    }
+
+    protected function Swing_the_bucket()
+    {
+
+    }
+}
+
+<?php
+//с помощью интерфейса
+
+interface TransportInterface 
+{
+  public function act();
+}
+
+class Transport implements TransportInterface
+{    
+    public function act()
+    {
+	this->go(); //машина едет
+    }
+
+    protected function go()
+    {
+
+    }
+
+    protected function honk()
+    {
+	echo $this->honk; //гудит
+    }
+
+    protected function turn_on_the_wipers()
+    {
+          //дворники
+    }   
+}
+
+class Passenger_car extends Transport
+{
+    protected $honk = "bi-bi";
+    private $volume_of_the_tank;
+    private $engine_power;
+
+    protected function act() //едет и азот
+    {
+        this->go();
+        this->Nitrous_oxide()
+    }
+
+    protected function Nitrous_oxide()
+    {
+
+    }
+}
+
+class Bulldozer
+{
+    protected $honk = "buuuuu";
+    private $volume_of_the_tank;
+    private $engine_power;
+
+    protected function act() //едет и ковш
+    {
+	 this->go();
+         this->Swing_the_bucket()
+    }
+
+    protected function Swing_the_bucket()
+    {
+
+    }
+}
+

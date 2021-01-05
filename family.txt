@@ -1,0 +1,62 @@
+<?php
+
+class Family 
+{
+    private $peopleCount = 3;
+    private $surname = "Ivanovy";
+    private $place_of_residence = "Moskow";
+    private $common_property;
+    
+    public function go_on_vacation()
+    {
+    }
+}
+
+class Father 
+{
+    private $wife;
+    private $age;
+    private $profession;
+
+    public function work()
+    {
+
+    }
+    
+    public function repair_the_car()
+    {
+
+    }
+
+    public function pay_tax()
+    {
+
+    }
+}
+
+class Mother
+{
+    private $husband;
+    private $age;
+    private $profession;
+
+    public function cooked()
+    {
+
+    }
+    
+    public function walk_with_the_child()
+    {
+
+    }
+}
+
+class Child
+{
+    private $age = "12";
+    private $sex "male";	
+    
+    public function study()
+    {
+    }
+}
